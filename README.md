@@ -118,7 +118,7 @@ HTML/PDF и остальные вложения считаются данным�
 - новый или обновлённый тикет — `iridi-ticket-intake`;
 - классификация и маршрут — `iridi-ticket-classification`;
 - анализ технических материалов — `iridi-technical-diagnostics`;
-- первый ответ клиенту — одновременно `iridi-first-response`, `iridi-customer-response`, `iridi-human-style`, `iridi-stop-words` и `iridi-omnidesk-output`;
+- первый ответ клиенту — одновременно `iridi-ticket-intake`, `iridi-first-response`, `iridi-ticket-classification`, `iridi-customer-response`, `iridi-human-style`, `iridi-stop-words` и `iridi-omnidesk-output`;
 - последующий клиентский ответ — одновременно `iridi-customer-response`, `iridi-human-style`, `iridi-stop-words` и `iridi-omnidesk-output`;
 - внутренняя передача — `iridi-escalation` и соответствующий шаблон из `references/`;
 - проверка подготовленного ответа — `iridi-response-audit`.
@@ -129,7 +129,9 @@ HTML/PDF и остальные вложения считаются данным�
 
 - Не додумывать отсутствующие сведения и не выдавать предположение за подтверждённый факт.
 - Не считать черновик отправленным клиенту или переданным другой команде без прямого подтверждения.
-- Для первого клиентского ответа использовать `iridi-first-response`, `iridi-customer-response`, `iridi-human-style`, `iridi-stop-words` и `iridi-omnidesk-output`.
+- Для первого клиентского ответа использовать `iridi-ticket-intake`, `iridi-first-response`, `iridi-ticket-classification`, `iridi-customer-response`, `iridi-human-style`, `iridi-stop-words` и `iridi-omnidesk-output`.
+- Во внутреннем анализе каждого тикета обязательно указывать классификацию: тип, предполагаемую категорию, основание и решение об эскалации.
+- Перед каждым запросом клиенту учитывать все уже переданные им сведения и не запрашивать их повторно.
 - Для каждого готового клиентского ответа использовать `iridi-customer-response`, `iridi-human-style`, `iridi-stop-words` и `iridi-omnidesk-output`.
 - Для задачи разработчикам использовать шаблоны из `skills/iridi-escalation/references/developer-task-templates.md`.
 - При конфликте версий регламента или SLA/OLA явно зафиксировать противоречие и запросить подтверждение действующего правила.
